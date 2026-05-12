@@ -1,0 +1,60 @@
+.navbar-custom {
+  background-color: black;
+}
+.navbar-brand{
+    color:#e7d19f;
+}
+
+.section1{
+    background-image: url('moviebackground.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px;
+}
+.tickets{
+    padding: 10px 20px;
+    display: inline-block;
+    height:400px;
+}
+h1{
+    color:#e7d19f;
+    font-size:15px;
+}
+h2{
+    color:#e7d19f;
+}
+h3{
+    color: black;
+    font-size:10px;
+}
+.bigbeigebox{
+    background-color: #e7d19f;
+    padding: 20px;
+    border-radius: 10px;
+}   
+p{
+    color:#e7d19f;
+    font-size:50px;
+    text-shadow: 10px 5px 5px black;
+}
+
+.btnside {
+    background-color: #fae630;
+    color: black;
+    border: 2px solid black;
+    height: 100%;
+}
+.btnside:hover {
+    background-color: #fff27e;
+    color: black;
+    transition: all 0.3s ease-in-out;
+    /* duration and easing */
+    transform: scale(1.05);
+    /* smooth enlargement */
+    box-shadow: 3px 3px 0px black;
+}
+.btntoggle {
+    display: block;
+    margin: 0 auto;
+}
