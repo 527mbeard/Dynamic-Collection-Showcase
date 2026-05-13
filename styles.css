@@ -1,60 +1,133 @@
 .navbar-custom {
-  background-color: black;
-}
-.navbar-brand{
-    color:#e7d19f;
+    background-color: black;
 }
 
-.section1{
-    background-image: url('moviebackground.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 50px;
-}
-.tickets{
-    padding: 10px 20px;
-    display: inline-block;
-    height:400px;
-}
-h1{
-    color:#e7d19f;
-    font-size:15px;
-}
-h2{
-    color:#e7d19f;
-}
-h3{
-    color: black;
-    font-size:10px;
-}
-.bigbeigebox{
-    background-color: #e7d19f;
-    padding: 20px;
-    border-radius: 10px;
-}   
-p{
-    color:#e7d19f;
-    font-size:50px;
-    text-shadow: 10px 5px 5px black;
+.navbar-brand {
+    color: #e7d19f;
 }
 
 .btnside {
-    background-color: #fae630;
+    background-color: #e7d19f;
     color: black;
     border: 2px solid black;
     height: 100%;
 }
+
 .btnside:hover {
-    background-color: #fff27e;
-    color: black;
+    background-color: #830102;
+    color: white;
     transition: all 0.3s ease-in-out;
     /* duration and easing */
     transform: scale(1.05);
     /* smooth enlargement */
     box-shadow: 3px 3px 0px black;
 }
+
 .btntoggle {
     display: block;
     margin: 0 auto;
+}
+
+.section1 {
+    background-image: url('moviebackground.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px;
+}
+
+.tickets {
+    padding: 10px 20px;
+    display: inline-block;
+    height: 400px;
+}
+
+h1 {
+    color: #e7d19f;
+    font-size: 15px;
+}
+
+.h1text {
+    font-size: 55px;
+    text-align: center;
+    padding: 10px;
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h2 {
+    color: #e7d19f;
+    font-size: 140px;
+}
+
+.h2text {
+    font-size: 20px;
+}
+
+h3 {
+    color: black;
+    font-size: 20px;
+}
+
+.h3text {
+    font-size: 15px;
+
+}
+
+.bigbeigebox {
+    background-color: #e7d19f;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+p {
+    color: #e7d19f;
+    font-size: 50px;
+    text-shadow: 10px 5px 5px black;
+}
+
+.ticker {
+    background-color: #e7d19f;
+    padding: 0.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker__track {
+    display: inline-flex;
+    animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker__item {
+    font-family: JetBrains Mono;
+    font-size: 1 rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-bg-primary);
+    padding: 0 2.5rem;
+}
+
+@keyframes ticker-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.section2 {
+    background-color: #830102;
+}
+
+.pics {
+    padding: 20px;
+    display: inline-block;
+    height: 600px;
+}
+
+.section1collect {
+    background-image: url(popcornred.png)
 }
