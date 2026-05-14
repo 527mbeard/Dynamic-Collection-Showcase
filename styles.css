@@ -39,12 +39,22 @@
 .tickets {
     padding: 10px 20px;
     display: inline-block;
-    height: 400px;
+    height: 600px;
+}
+
+.title{
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size:40px;
 }
 
 h1 {
     color: #e7d19f;
-    font-size: 15px;
+    font-size: 40px;
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .h1text {
@@ -58,7 +68,8 @@ h1 {
 
 h2 {
     color: #e7d19f;
-    font-size: 140px;
+    font-size: 175px;
+    font-family: 'Playfair Display', serif;
 }
 
 .h2text {
@@ -71,7 +82,7 @@ h3 {
 }
 
 .h3text {
-    font-size: 15px;
+    font-size: 20px;
 
 }
 
@@ -82,9 +93,10 @@ h3 {
 }
 
 p {
-    color: #e7d19f;
-    font-size: 50px;
+    color: #b18666;
+    font-size: 100px;
     text-shadow: 10px 5px 5px black;
+    font-family: 'Playfair Display', serif;
 }
 
 .ticker {
