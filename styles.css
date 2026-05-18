@@ -49,12 +49,22 @@
     font-size:40px;
 }
 
+.title:hover{
+    color:#830102;
+    transition: all 0.3s ease-in-out;
+}
+
 h1 {
     color: #e7d19f;
     font-size: 40px;
     font-family: "bebas-neue-by-fontfabric", sans-serif;
     font-weight: 700;
     font-style: normal;
+}
+
+h1:hover {
+    color: #830102;
+    transition: all 0.3s ease-in-out;
 }
 
 .h1text {
