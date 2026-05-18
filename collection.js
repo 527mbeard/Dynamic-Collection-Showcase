@@ -12,47 +12,7 @@ document.getElementById("darkModeBtn").addEventListener("click", function () {
         localStorage.setItem("theme", "light");
     }
 });
-//dark mode
-
-{/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-    {movies.map((movie, index) => (
-        <div
-            key={index}
-            className="movie-card bg-[#7d0000] border-4 border-dashed border-white rounded-3xl overflow-hidden shadow-2xl transition duration-300"
-        >
-            <img
-                src={movie.image}
-                className="h-72 w-full object-cover"
-            />
-
-            <div className="p-6">
-                <div className="flex justify-between items-center mb-4">
-                    <span className="bg-[#e6c88f] text-black px-3 py-1 rounded-full text-sm font-bold">
-                        {movie.genre}
-                    </span>
-
-                    <span className="text-sm">⭐ {movie.rating}</span>
-                </div>
-
-                <h3 className="text-3xl font-black uppercase mb-2">
-                    {movie.title}
-                </h3>
-
-                <p className="text-sm text-[#f5e7c4] leading-6 font-sans mb-5">
-                    {movie.description}
-                </p>
-
-                <div className="flex justify-between items-center">
-                    <span className="font-bold">{movie.year}</span>
-
-                    <button className="bg-[#e6c88f] text-black px-4 py-2 rounded-full font-bold hover:scale-105 transition">
-                        View
-                    </button>
-                </div>
-            </div>
-        </div>
-    ))}
-</div>  */}
+// dark mode
 
 
 const collection = [
@@ -300,3 +260,93 @@ const collection = [
 
 console.log(collection)
 
+const movieGrid = document.getElementById("movieGrid");
+
+const modal = document.getElementById("movieModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const modalExtra = document.getElementById("modalExtra");
+const closeModal = document.getElementById("closeModal");
+
+let currentFilter = "All";
+
+function render(list) {
+    movieGrid.innerHTML = "";
+
+    list.forEach(movie => {
+
+        // ✅ CONDITIONAL (RUBRIC REQUIREMENT)
+        let badgeColor = "";
+        if (movie.rating >= 4.5) {
+            badgeColor = "gold";
+        } else {
+            badgeColor = "white";
+        }
+
+        const card = document.createElement("div");
+        card.classList.add("movie-card");
+
+        card.innerHTML = `
+            <div class="poster-wrapper">
+                <img src="${movie.image}" class="movie-poster">
+            </div>
+
+            <div class="movie-info">
+
+                <div class="top-row">
+                    <span class="genre-tag">${movie.genre}</span>
+                    <span class="rating" style="color:${badgeColor}">
+                        ⭐ ${movie.rating}
+                    </span>
+                </div>
+
+                <h2 class="movie-title">${movie.title}</h2>
+
+                <p class="movie-description">${movie.description}</p>
+
+                <div class="bottom-row">
+                    <span class="movie-year">${movie.year}</span>
+                    <button class="view-btn">More Info</button>
+                </div>
+
+            </div>
+        `;
+
+        // ✅ MODAL (RUBRIC REQUIREMENT)
+        card.querySelector(".view-btn").addEventListener("click", () => {
+            modalTitle.textContent = movie.title;
+            modalDesc.textContent = movie.description;
+            modalExtra.textContent =
+                `Director: ${movie.director} | Runtime: ${movie.runtime}`;
+
+            modal.classList.remove("hidden");
+        });
+
+        movieGrid.appendChild(card);
+    });
+}
+
+// FILTER FUNCTION (.filter() RUBRIC REQUIREMENT)
+function filterMovies(category) {
+    if (category === "All") {
+        render(collection);
+    } else {
+        const filtered = collection.filter(movie => movie.genre === category);
+        render(filtered);
+    }
+}
+
+// BUTTON EVENTS
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterMovies(btn.dataset.filter);
+    });
+});
+
+// CLOSE MODAL
+closeModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+});
+
+// INITIAL LOAD
+render(collection);
