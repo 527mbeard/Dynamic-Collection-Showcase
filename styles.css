@@ -2,6 +2,7 @@
 
 body {
     overflow-x: hidden;
+    overflow-y:scroll;
 }
 
 .navbar-custom {
@@ -47,6 +48,11 @@ body {
     box-shadow: 3px 3px 0px black;
 }
 
+.btnside:active {
+    background-color: #830102 !important;
+    color: white !important;
+}
+
 /* SECTION 1 */
 
 .section1 {
@@ -86,6 +92,7 @@ body {
     color: #e7d19f;
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 6vw, 4rem);
+    margin:0px 0px 20px;
 }
 
 /* CONTENT BOX */
@@ -172,9 +179,8 @@ body {
     background-image: url("popcornred.png"); 
     background-position: center;
     background-repeat: repeat;
+    background-attachment: fixed;
 }
-
-
 
 /* COLLECTION TITLE */
 
@@ -183,9 +189,9 @@ body {
     color: #e7d19f;
     font-family: 'Playfair Display', serif;
     letter-spacing: 5px;
-    margin-top: 1rem;
-    position: relative;
+    margin-top: 1rem;   
     z-index: 2;
+    background-color: rgba(0, 0, 0, 0.466);
 }
 
 /* FILTER BAR */
@@ -200,21 +206,19 @@ body {
     gap: 1rem;
     flex-wrap: wrap;
     position: relative;
-    z-index: 2;
+    z-index: 3000;
+
 }
 
 /* FILTER DROPDOWN */
 
-.filter-btn {
+.filter-btn,
+.genre-filter {
     background: #830102;
     color: white;
-
     border: none;
-
     border-radius: 15px;
-
     padding: 12px 25px;
-
     font-size: 1rem;
 }
 
@@ -231,34 +235,34 @@ body {
     background: #830102;
 }
 
+.dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+.dropdown-menu {
+    z-index: 2000;
+}
+
 /* SEARCH */
 
 .search-box {
     flex: 1;
     min-width: 250px;
-
     background: #e7d19f;
-
     border: 3px solid #2d2413;
-
     border-radius: 50px;
-
     display: flex;
     align-items: center;
-
     padding: 0 1rem;
 }
 
 .search-box input {
     flex: 1;
-
     background: transparent;
     border: none;
-
     outline: none;
-
     padding: 12px;
-
     font-size: 1rem;
 }
 
@@ -271,15 +275,10 @@ body {
 .genre-btn {
     background: #830102;
     color: white;
-
     border: none;
-
     border-radius: 40px;
-
     padding: 12px 28px;
-
     font-size: 1rem;
-
     transition: 0.3s;
 }
 
@@ -293,95 +292,6 @@ body {
 #movieGrid {
     position: relative;
     z-index: 2;
-}
-
-/* MOVIE CARD */
-
-.movie-card {
-    width: 320px;
-
-    background: #830102;
-
-    border-radius: 30px;
-
-    overflow: hidden;
-
-    border: 4px dashed white;
-
-    transition: 0.3s;
-
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.movie-card:hover {
-    transform: translateY(-10px);
-}
-
-/* POSTER */
-
-.movie-poster {
-    width: 100%;
-    height: 430px;
-    object-fit: cover;
-}
-
-/* CARD INFO */
-
-.movie-info {
-    background: rgba(73, 0, 0, 0.95);
-    padding: 1rem;
-}
-
-.genre-tag {
-    display: inline-block;
-
-    background: #e7d19f;
-    color: black;
-
-    padding: 4px 10px;
-
-    border-radius: 20px;
-
-    font-size: 0.7rem;
-
-    margin-bottom: 0.8rem;
-}
-
-.movie-title {
-    color: #e7d19f;
-
-    font-size: 1.8rem;
-
-    font-family: 'Playfair Display', serif;
-}
-
-.movie-desc {
-    color: white;
-    font-size: 0.9rem;
-}
-
-.movie-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-top: 1rem;
-}
-
-.rating {
-    color: gold;
-}
-
-.view-btn {
-    background: #e7d19f;
-
-    border: none;
-
-    border-radius: 30px;
-
-    padding: 8px 18px;
-
-    font-weight: bold;
 }
 
 /* RESPONSIVE */
@@ -410,187 +320,126 @@ body {
     ---------------------- */
 
 .movie-card {
-
     width: 330px;
-
     background: #8b0000;
-
     border-radius: 30px;
-
     overflow: hidden;
-
     border: 4px dashed white;
-
     position: relative;
-
     transition: 0.3s ease;
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.5);
-
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .movie-card:hover {
-
     transform: translateY(-10px);
-
 }
 
 /* POSTER */
 
 .poster-wrapper {
-
     width: 100%;
     height: 430px;
-
     overflow: hidden;
-
     background: #8b0000;
 }
 
 .movie-poster {
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
 
 /* INFO SECTION */
 
 .movie-info {
-
     background:
         linear-gradient(to bottom,
             rgba(80, 0, 0, 0.95),
             rgba(50, 0, 0, 0.98));
-
     padding: 1rem;
-
 }
 
 /* TOP ROW */
 
 .top-row {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     margin-bottom: 1rem;
 }
 
 /* GENRE */
 
 .genre-tag {
-
     background: #e7d19f;
-
     color: #300000;
-
     padding: 4px 12px;
-
     border-radius: 50px;
-
     font-size: 0.7rem;
-
     font-weight: bold;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
 }
 
 /* RATING */
 
 .rating {
-
     color: gold;
-
     font-size: 0.9rem;
-
     font-weight: bold;
 }
 
 /* TITLE */
 
 .movie-title {
-
     color: #f0d9a4;
-
     font-size: 2rem;
-
     font-family: 'Playfair Display', serif;
-
     margin-bottom: 0.7rem;
-
     line-height: 1;
 }
 
 /* DESCRIPTION */
 
 .movie-description {
-
     color: rgba(255, 255, 255, 0.85);
-
     font-size: 0.9rem;
-
     line-height: 1.5;
-
     margin-bottom: 1.5rem;
 }
 
 /* BOTTOM ROW */
 
 .bottom-row {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
 
 /* YEAR */
 
 .movie-year {
-
     color: #e7d19f;
-
     font-size: 0.9rem;
-
     font-weight: bold;
-
     letter-spacing: 1px;
 }
 
 /* BUTTON */
 
 .view-btn {
-
     background: #e7d19f;
-
     color: black;
-
     border: none;
-
     padding: 8px 18px;
-
     border-radius: 30px;
-
     font-weight: bold;
-
     transition: 0.3s;
 }
 
 .view-btn:hover {
-
     background: white;
-
     transform: scale(1.05);
 
 }
@@ -657,46 +506,34 @@ body {
 /* TEXT */
 
 .about-collection-text {
-
     color: black;
-
     font-size: clamp(1.2rem, 2vw, 2rem);
-
     line-height: 1.8;
-
     letter-spacing: 1px;
 }
 
 /* FILM STRIPS */
 
 .film-strip {
-
     position: absolute;
-
     width: 220px;
-
     opacity: 0.95;
-
     z-index: 1;
 }
 
 /* TOP RIGHT */
 
 .film-strip-top {
-
     top: 40px;
     right: -40px;
-
     transform: rotate(20deg);
 }
 
 /* BOTTOM LEFT */
 
 .film-strip-bottom {
-
     bottom: -40px;
     left: -40px;
-
     transform: rotate(-20deg);
 }
 

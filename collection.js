@@ -327,7 +327,32 @@ function filterMovies(category) {
     }
 }
 
-document.querySelectorAll(".filter-btn").forEach(btn => {
+document.querySelectorAll(".sort-option").forEach(option => {
+    option.addEventListener("click", () => {
+
+        const sortType = option.dataset.sort;
+
+        let sortedMovies = [...collection];
+
+        if (sortType === "rating") {
+            sortedMovies.sort((a, b) => b.rating - a.rating);
+        }
+
+        else if (sortType === "alphabetical") {
+            sortedMovies.sort((a, b) =>
+                a.title.localeCompare(b.title)
+            );
+        }
+
+        else if (sortType === "random") {
+            sortedMovies.sort(() => Math.random() - 0.5);
+        }
+
+        render(sortedMovies);
+    });
+});
+
+document.querySelectorAll(".genre-filter").forEach(btn => {
     btn.addEventListener("click", () => {
         filterMovies(btn.dataset.filter);
     });
